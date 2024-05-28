@@ -1,1 +1,1 @@
-#Alumini Management System (AMS)
+**Alumini Management System (AMS)**
