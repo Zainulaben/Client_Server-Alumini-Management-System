@@ -22,10 +22,10 @@ The AMS system is designed to manage student information and user roles effectiv
 
 ## Features
 
-- User Authentication: Ensures that only registered users can access the system.
-- Role-Based Authorization: Different roles have different levels of access and permissions.
-- CRUD Operations: Users can perform Create, Read, Update, and Delete operations on the student and user database.
-- Secure Data Management: User passwords are stored securely.
+- **User Authentication:** Ensures that only registered users can access the system.
+- **Role-Based Authorization:** Different roles have different levels of access and permissions.
+- **CRUD Operations:** Users can perform Create, Read, Update, and Delete operations on the student and user database.
+- **Secure Data Management:** User passwords are stored securely.
 
 
 ## Database Schema
@@ -91,3 +91,38 @@ To set up the LMS on your local machine, follow these steps:
 - **Server Setup**: Configure the server application to connect to the SQL Server instance and handle client requests.
 
 - **Client Setup**: Develop or configure client applications to interact with the server. This could be a web-based application, desktop application, or mobile app.
+
+
+## Usage
+- **Launch the Server:** Start the server application to listen for client requests. Server response every requests of client.
+
+- **Client Interaction:** Clients can log in using their credentials. Depending on their role, they can perform various operations such as adding a new student, editing existing student information, or deleting a student record, adding a new user, editing existing user information, or deleting a user record.
+
+## Example Operations
+- **Login Request:**
+   - Client sends a login request with email and password.
+   - Server verifies credentials and responds with an authentication token or error message.
+
+- **Add Student:**
+   - Client sends a request with student details.
+   - Server checks permissions and adds the student to the database if authorized.
+
+- **Delete Student:**
+   - Client sends a request with student details.
+   - Server checks permissions and deletes the student to the database if authorized.
+
+- **Edit Student:**
+   - Client sends a request with student details.
+   - Server checks permissions and edits the student to the database if authorized.
+
+- **Add User:**
+   - Client sends a request with user details.
+   - Server checks permissions and adds the user to the database if authorized.
+
+- **Delete User:**
+   - Client sends a request with user details.
+   - Server checks permissions and deletes the user to the database if authorized.
+
+- **Edit User:**
+   - Client sends a request with user details.
+   - Server checks permissions and edits the user to the database if authorized.
