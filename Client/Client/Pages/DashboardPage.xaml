@@ -1,0 +1,120 @@
+﻿<Page x:Class="Client.Pages.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Client.Pages"
+        mc:Ignorable="d" 
+        d:DesignHeight="500" d:DesignWidth="600"
+        Title="Dashboard">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
+    </Page.Resources>
+
+    <Grid Margin="30 20 20 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Page Title-->
+        <TextBlock x:Name="title" Text="Users" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
+       HorizontalAlignment="Left" Foreground="#121518"/>
+
+        <!--Couter Title-->
+        <TextBlock Text="Filter By Username" Grid.Row="1" FontSize="13" FontWeight="SemiBold" Foreground="#121518" Margin="0 0 215 0"
+       HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+        <!--Filter Box-->
+        <Grid Width="200" HorizontalAlignment="Right" Grid.Row="1">
+            <TextBlock x:Name="FilterBlock" Margin="15 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False"
+           Panel.ZIndex="1" Text="Search in User ..."
+           Visibility="{Binding ElementName=txtFilter,Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}" />
+
+            <TextBox x:Name="txtFilter" Style="{StaticResource textboxFilter}" TextChanged="txtFilter_TextChanged"/>
+        </Grid>
+
+        <!--Seprator-->
+        <Separator Height="1" Grid.Row="3" Background="#dae2ea" Margin="0 -1 0 10" />
+
+        <!--Tab Buttons-->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 10 0 0">
+            <Button x:Name="UsersButton" Content="Users" Style="{StaticResource tabButton}" Click="UsersButton_Click" BorderBrush="#784ff2"/>
+            <Button x:Name="StudentsButton" Content="Students" Style="{StaticResource tabButton}" Click="StudentsButton_Click"/>
+        </StackPanel>
+
+        <!--Member Datagrid-->
+        <DataGrid Style="{DynamicResource DataGridStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" Grid.Row="4" x:Name="membersDataGrid">
+            <DataGrid.Columns>
+                <!--Check Box-->
+                <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{DynamicResource CheckBoxStyle1}">
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox Style="{DynamicResource CheckBoxStyle1}"/>
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+
+                <!--ID-->
+                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
+
+                <!--Username-->
+                <DataGridTemplateColumn Header="Username" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="30" Height="30" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
+                                    <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
+                                </Border>
+
+                                <TextBlock Text="{Binding UserName}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--Session-->
+                <DataGridTextColumn x:Name="Session" Header="Session" IsReadOnly="True" Width="*" Binding="{Binding Session}" Visibility="Hidden"/>
+                <!--Roll Number-->
+                <DataGridTextColumn x:Name="RollNumber" Header="Roll Number" IsReadOnly="True" Width="*" Binding="{Binding RollNumber}" Visibility="Hidden"/>
+                <!--Email-->
+                <DataGridTextColumn x:Name="Email" Header="Email" IsReadOnly="True" Width="*" Binding="{Binding Email}"/>
+                <!--Role-->
+                <DataGridTextColumn x:Name="Role" Header="Role" IsReadOnly="True" Width="*" Binding="{Binding Role}"/>
+                <!--Phone Number-->
+                <DataGridTextColumn x:Name="PhoneNumber" Header="Phone Number" IsReadOnly="True" Width="*" Binding="{Binding PhoneNumber}"/>
+                <!--Operation Buttons-->
+                <DataGridTemplateColumn x:Name="Operations" Header="Operation" IsReadOnly="True" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <!--Edit Button-->
+                                <Button x:Name="editButton" Style="{StaticResource gridEditButton}" Click="editButton_Click">
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Edit"/>
+                                    </Button.ToolTip>
+                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+                                <!--Delete Button-->
+                                <Button x:Name="deleteButton" Style="{StaticResource gridRemoveButton}" Margin="5 0 0 0" Click="deleteButton_Click">
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Delete"/>
+                                    </Button.ToolTip>
+                                    <Icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Page>
