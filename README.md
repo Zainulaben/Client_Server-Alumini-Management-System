@@ -30,7 +30,7 @@ The AMS system is designed to manage student information and user roles effectiv
 
 ## Database Schema
 
-The database is implemented in SQL Server and includes two main tables: Student and User.
+The database is implemented in SQL Server and includes two main tables: **Student** and **User**.
 
 ### Student Table
 ```bash
@@ -56,3 +56,38 @@ CREATE TABLE [dbo].[User] (
 );
 ```
 
+
+## Setup Instructions
+
+To set up the LMS on your local machine, follow these steps:
+
+- **Install SQL Server**: Ensure SQL Server is installed and running on your machine.
+
+- **Create Database**: Run the following SQL commands to create the database and tables:
+   ```bash
+   CREATE DATABASE LMS;
+      
+   USE LMS;
+   
+   CREATE TABLE [dbo].[Student] (
+      [Id]  INT      IDENTITY (1, 1) NOT NULL,
+      [UserName]     VARCHAR (50) NOT NULL,
+      [Email]        VARCHAR (50) NOT NULL,
+      [Session]      VARCHAR (50) NOT NULL,
+      [RollNumber]   VARCHAR (50) NOT NULL,
+      PRIMARY KEY (Id)
+    );
+    
+    CREATE TABLE [dbo].[User] (
+      [Id] INT   IDENTITY (1, 1) NOT NULL,
+      [UserName]    VARCHAR (50) NOT NULL,
+      [Email]       VARCHAR (50) NOT NULL,
+      [Password]    VARCHAR (50) NOT NULL,
+      [PhoneNumber] VARCHAR (50) NOT NULL,
+      [Role]        VARCHAR (50) NOT NULL,
+      PRIMARY KEY (Id)
+   );
+   ```
+- **Server Setup**: Configure the server application to connect to the SQL Server instance and handle client requests.
+
+- **Client Setup**: Develop or configure client applications to interact with the server. This could be a web-based application, desktop application, or mobile app.
