@@ -10,7 +10,7 @@ This project implements a basic client-server architecture for a Alumini Managem
 - Database Schema
 - Setup Instructions
 - Usage
-- Contributing
+- Screenshots
 
 ## Overview
 
@@ -130,17 +130,23 @@ To set up the LMS on your local machine, follow these steps:
 
 ## Screenshots
 
-
+**Login**
 ![Login](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/login.png)
 
+**Dashboard User**
 ![Dashboard User](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/DashboardUser.png)
 
+**Dashboard Student**
 ![Dashboard Student](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/DashboardStudent.png)
 
+**Add User**
 ![Add User](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/AddUser.png)
 
+**Add Student**
 ![Add Student](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/AddStudent.png)
 
+**Edit User**
 ![Edit User](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/EditUser.png)
 
+**Edit Student**
 ![Edit Student](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/EditStudent.png)
