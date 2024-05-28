@@ -1,6 +1,6 @@
 # Alumini Management System (AMS)
 
-This project implements a basic client-server architecture for a Learning Management System (LMS) using SQL Server for database management. The system allows clients to interact with the server to perform operations such as adding, deleting, and editing data, contingent on their roles and authentication.
+This project implements a basic client-server architecture for a Alumini Management System (AMS) using SQL Server for database management. The system allows clients to interact with the server to perform operations such as adding, deleting, and editing data, contingent on their roles and authentication.
 
 
 ## Table of Contents
