@@ -127,6 +127,20 @@ To set up the LMS on your local machine, follow these steps:
    - Client sends a request with user details.
    - Server checks permissions and edits the user to the database if authorized.
 
+
 ## Screenshots
 
-![Dashboard](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/AddStudent.png)
+
+![Login](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/login.png)
+
+![Dashboard User](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/DashboardUser.png)
+
+![Dashboard Student](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/DashboardStudent.png)
+
+![Add User](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/AddUser.png)
+
+![Add Student](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/AddStudent.png)
+
+![Edit User](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/EditUser.png)
+
+![Edit Student](https://github.com/Zainulaben/Client_Server-Alumini-Management-System/blob/master/OutputImages/EditStudent.png)
